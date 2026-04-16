@@ -8,8 +8,6 @@
 
 // Execute `rustlings hint errors6` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 use std::mem::replace;
 use std::num::ParseIntError;
 
@@ -40,8 +38,8 @@ fn parse_pos_nonzero(s: &str) -> Result<PositiveNonzeroInteger, ParsePosNonzeroE
 
     if let Ok(x) = x {
         match PositiveNonzeroInteger::new(x) {
-            Ok(x) => Ok(x),
-            Err(e) => Err(ParsePosNonzeroError::Creation(e))
+            Ok(x) => return Ok(x),
+            Err(e) => return Err(ParsePosNonzeroError::Creation(e))
         };
     }
     Ok(PositiveNonzeroInteger(0))
